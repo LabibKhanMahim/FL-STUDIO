@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FL Studio Showcase Simulator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="startupOverlay" class="startup-overlay">
+      <div class="startup-card">
+        <h1>FL Studio Project Boot</h1>
+        <div class="startup-lines" id="startupLines"></div>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="startupProgress"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-shell">
+      <header class="top-bar panel">
+        <div class="logo">FL</div>
+        <div class="transport">
+          <button id="playBtn" class="btn btn-accent" disabled>▶ Play</button>
+          <button id="pauseBtn" class="btn" disabled>⏸ Pause</button>
+          <button id="stopBtn" class="btn" disabled>⏹ Stop</button>
+          <span class="status" id="statusText">Awaiting audio upload…</span>
+        </div>
+        <label class="upload btn btn-green">
+          Upload Song
+          <input id="audioInput" type="file" accept="audio/*" />
+        </label>
+      </header>
+
+      <main class="workspace">
+        <section class="playlist panel">
+          <div class="panel-title">Playlist / Arrangements</div>
+          <div class="master-wave-wrap">
+            <div id="masterWave"></div>
+            <div class="master-tag">Master Song Waveform (WaveSurfer)</div>
+          </div>
+          <div class="playlist-header">
+            <div class="timeline" id="timeline"></div>
+            <div class="playhead" id="playhead"></div>
+          </div>
+          <div class="playlist-lanes" id="playlistLanes"></div>
+        </section>
+
+        <section class="right-column">
+          <div class="mixer panel">
+            <div class="panel-title">Mixer</div>
+            <div class="plugin-rack" id="pluginRack"></div>
+            <div id="mixerChannels" class="mixer-channels"></div>
+          </div>
+
+          <div class="sequencer panel">
+            <div class="panel-title">Step Sequencer</div>
+            <div id="sequencerRows" class="sequencer-rows"></div>
+          </div>
+
+          <div class="piano-roll panel">
+            <div class="panel-title">Piano Roll</div>
+            <canvas id="pianoCanvas" width="640" height="180"></canvas>
+          </div>
+
+          <div class="spectrum panel">
+            <div class="panel-title">Spectrum Analyzer</div>
+            <canvas id="spectrumCanvas" width="640" height="180"></canvas>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
