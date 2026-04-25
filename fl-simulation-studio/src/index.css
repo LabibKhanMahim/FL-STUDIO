@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-fl-bg: #1B2125;
+  --color-fl-panel: #20272B;
+  --color-fl-panel-border: #131719;
+  --color-fl-orange: #FF7B00;
+  --color-fl-green: #37d652;
+  --color-fl-text: #b3b4b8;
+  --color-fl-text-light: #ffffff;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-fl-bg);
+  color: var(--color-fl-text);
+  overflow: hidden; /* Prevent scrolling in the DAW */
+  user-select: none;
+}
+
+/* Custom scrollbar for DAW panels */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1c;
+}
+::-webkit-scrollbar-thumb {
+  background: #444549;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #55565a;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #444549;
+    border-radius: 3px;
+}
+
